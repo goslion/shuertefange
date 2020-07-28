@@ -72,7 +72,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
           title: Center(
             child: Text(
               '舒尔特方格',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 36 * rpx, fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -94,7 +94,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
                     Text(
                       "当前:[${provider.level}X${provider.level}]关",
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24 * rpx,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
@@ -157,7 +157,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
                     child: Text(
                       "上一关",
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24 * rpx,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
@@ -178,7 +178,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
                         child: Text(
                           "重新挑战",
                           style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 24 * rpx,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -209,7 +209,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
                     child: Text(
                       "下一关",
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24 * rpx,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
@@ -230,7 +230,7 @@ class _ShuCellState extends State<ShuCell> with TickerProviderStateMixin {
                         child: Text(
                           "查看记录",
                           style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 24 * rpx,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -272,10 +272,11 @@ class _TimeRecorderState extends State<TimeRecorder> {
   @override
   Widget build(BuildContext context) {
     MyProvider provider = Provider.of<MyProvider>(context);
+    double rpx = MediaQuery.of(context).size.width / 750;
     return Text(
       "用时:${provider.totalTime.toStringAsFixed(1)}",
       style: TextStyle(
-          fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+          fontSize: 24 * rpx, color: Colors.white, fontWeight: FontWeight.bold),
     );
   }
 }
